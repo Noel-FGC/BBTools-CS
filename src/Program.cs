@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text.Json;
+using PythonStructCS;
 
 namespace BBToolsCS {
   public class BBScriptCommandData {
@@ -24,6 +25,9 @@ namespace BBToolsCS {
     static void Main(string[] args) {
       var commandDB = fetchCommandDB();
       Console.WriteLine(commandDB.Count + " Commands Loaded.");
+      
+      var binParser = new BinParser("./scr_hz.bin", commandDB);
+      
     }
   }
 }

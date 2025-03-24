@@ -5,7 +5,7 @@ using PythonStructCS;
 
 namespace BBToolsCS {
   public class BBScriptCommandData {
-    public string name { get; set; } = "a";
+    public string name { get; set; } = "";
     public string format { get; set; } = "I";
     public int size { get; set; } = 4;
     public bool hex { get; set; } = false;
@@ -20,6 +20,14 @@ namespace BBToolsCS {
       if (commands is null) {
         throw new NullReferenceException("Json loader returned null");
       }
+
+      foreach(uint key in commands.Keys) {
+        if (commands[key].name == "") {
+          commands[key].name = ("Instruction" + key);
+        }
+      }
+
+
       return commands;
     }
     static void Main(string[] args) {

@@ -6,7 +6,7 @@ using PythonStructCS;
 namespace BBToolsCS {
   public class BBScriptCommandData {
     public string name { get; set; } = "";
-    public string format { get; set; } = "I";
+    public string format { get; set; } = "";
     public int size { get; set; } = 4;
     public bool hex { get; set; } = false;
   }
